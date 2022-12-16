@@ -24,30 +24,29 @@ namespace Mession1.Controllers
 
                 SQLInsert sQLInserts = new SQLInsert();
                 bool InserCheck = sQLInserts.InsertCheck(account, userName, accounted_return, maxbalance);
-
+                SortedList<string, Object> JsonBackData = new SortedList<string, Object>();
                 if (InserCheck == true)
                 {
                     var BackData = new { playUrl = "testUrl" };
-                    SortedList<string, Object> JsonBackData = new SortedList<string, Object>();
                     JsonBackData.Add("data", BackData);
                     return JsonBackData;
                 }
-                else {
-                    return null;
-                }
+               
       
 
             } 
             catch (Exception e) {
-                return null;
+                SortedList<string, Object> JsonErrorData = new SortedList<string, Object>();
+                var BackData = new { errorCode = "0003" };
+                JsonErrorData.Add("data", BackData);
+                return JsonErrorData;    
 
             }
-  
 
+            return null;
 
 
         }
-
         public String login(String account)
         {
             return null;
@@ -158,7 +157,7 @@ namespace Mession1.Controllers
                 MySqlConnection conn = new MySqlConnection(sQLConnect.getConstring());
                 conn.Open();
                 //String sqlInsert = "Insert into mession1.connecttest(id,name,password) values (4,'sstss','s1235555')";//
-                String sqlInsert = "Insert into mession1.register(account,userName,accounted_return,maxbalance) values (@account,@userName,@accounted_return,@maxbalance)";
+                String sqlInsert = "Insert into mession1.accounttest(account,userName,accounted_return,maxbalance) values (@account,@userName,@accounted_return,@maxbalance)";
                 MySqlCommand cmd = new MySqlCommand(sqlInsert, conn);
                 cmd.Parameters.AddWithValue("@account", account);
                 cmd.Parameters.AddWithValue("@userName", userName);
