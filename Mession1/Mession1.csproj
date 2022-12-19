@@ -271,6 +271,7 @@
     </Compile>
     <Compile Include="Controllers\APITestController.cs" />
     <Compile Include="Controllers\CallAPIController.cs" />
+    <Compile Include="Controllers\GameAPIController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
