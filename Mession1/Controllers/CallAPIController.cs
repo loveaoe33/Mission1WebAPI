@@ -5,13 +5,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using static Mession1.MissonClass;
+using Newtonsoft.Json;
+
 
 namespace Mession1.Controllers
 {
+
     public class CallAPIController : ApiController
     {
+
         [AcceptVerbs("Get")]
         public String test() {
+     
             return "123";
         }
 
@@ -21,7 +27,8 @@ namespace Mession1.Controllers
 
             try
             {
-
+               
+                
                 SQLInsert sQLInserts = new SQLInsert();
                 bool InserCheck = sQLInserts.InsertCheck(account, userName, accounted_return, maxbalance);
                 SortedList<string, Object> JsonBackData = new SortedList<string, Object>();
@@ -47,6 +54,18 @@ namespace Mession1.Controllers
 
 
         }
+
+        [AcceptVerbs("Get")]
+        public Object Enum()
+        {
+            var y=CallSQL(SqlApi.REGISTER);
+ 
+            return y;
+        }
+
+
+
+
         public String login(String account)
         {
             return null;
@@ -146,6 +165,8 @@ namespace Mession1.Controllers
 
         public class SQLInsert
         {
+
+    
             Single single = new Single();
             SQLConnect sQLConnect;
             public SQLInsert()
@@ -169,10 +190,45 @@ namespace Mession1.Controllers
              
             }
 
+    
 
         }
 
+
+        public enum SqlApi {
+            REGISTER,LOGIN,CHECKPOINT,POINGLOGS,TRANSFERPOINT
+        }
+
+
+        public String CallSQL(SqlApi sqlApi) {
+            switch (sqlApi) {
+                case SqlApi.REGISTER:
+ 
+                    break;
+                case SqlApi.LOGIN:
+                   
+                    break;
+                case SqlApi.CHECKPOINT:
+                    
+                    break;
+                case SqlApi.POINGLOGS:
+                   
+                    break;
+                case SqlApi.TRANSFERPOINT:
+
+                    break;
+                default:
+                    break;
+            }
+            return null;
+        }
     }
 
+
+
+   
+
+    
+    
 
 }
