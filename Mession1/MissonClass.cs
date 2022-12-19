@@ -12,6 +12,7 @@ namespace Mession1
         public class loginClass
         {
             private String account;
+            //回傳
             private String playUrl;
             public loginClass() { }
             public void setaccount(String account)
@@ -34,7 +35,7 @@ namespace Mession1
 
 
 
-        public class chepoinClass
+        public class chePoinClass
         {
 
             private String account;
@@ -62,7 +63,7 @@ namespace Mession1
         }
 
 
-        public class poinlogClass
+        public class poinLogClass
         {
             private String account;
             private String page;
