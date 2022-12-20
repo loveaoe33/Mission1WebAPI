@@ -252,6 +252,7 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountToken.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -271,6 +272,7 @@
     </Compile>
     <Compile Include="Controllers\APITestController.cs" />
     <Compile Include="Controllers\CallAPIController.cs" />
+    <Compile Include="Controllers\GameAPIController.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

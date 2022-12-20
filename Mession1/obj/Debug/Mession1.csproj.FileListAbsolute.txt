@@ -262,3 +262,6 @@ C:\Users\loveaoe33\Desktop\mission1\Mission1WebAPI\Mession1\obj\Debug\Mession1.c
 C:\Users\loveaoe33\Desktop\mission1\Mission1WebAPI\Mession1\obj\Debug\Mession1.csproj.CopyComplete
 C:\Users\loveaoe33\Desktop\mission1\Mission1WebAPI\Mession1\obj\Debug\Mession1.dll
 C:\Users\loveaoe33\Desktop\mission1\Mission1WebAPI\Mession1\obj\Debug\Mession1.pdb
+C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\Newtonsoft.Json.Bson.dll
+C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\Newtonsoft.Json.Bson.pdb
+C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\Newtonsoft.Json.Bson.xml

@@ -1,16 +1,10 @@
-﻿using DotLiquid.Tags;
-using Lucene.Net.Support;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web.Http;
-using static Mession1.MissonClass;
 
 
 namespace Mession1.Controllers
