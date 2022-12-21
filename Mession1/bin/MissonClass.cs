@@ -21,32 +21,9 @@ namespace Mession1
 
         public class loginClass
         {
-<<<<<<< HEAD
             public String account { get; set; }
             public String playUrl { get; set; }
            
-=======
-            private String account;
-            //回傳
-            private String playUrl;
-            public loginClass() { }
-            public void setaccount(String account)
-            {
-                this.account = account;
-            }
-            public void setplayUrl(String playUrl)
-            {
-                this.playUrl = playUrl;
-            }
-            public String getaccount()
-            {
-                return account;
-            }
-            public String getplayUrl()
-            {
-                return playUrl;
-            }
->>>>>>> a86137cd8b9d330cee56ba8c5953d062d0a7a01b
         }
 
 

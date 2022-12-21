@@ -27,8 +27,9 @@ namespace Mession1.Controllers
         {
             String PostData = String.Format("會員帳號:{0}*帳號暱稱:{1}*退水比例:{2}*獲利線上:{3}", account, userName, accounted_return, maxbalance);
             String ReData = SQLAPI.CallSQL(SQLAPI.SqlApi.REGISTER, PostData);
-            
-            return ReData;
+            loginClass l = new loginClass();
+            l.account = "12355";
+            return l.account;
 
         }
 
