@@ -11,17 +11,38 @@ using System.Text;
 using System.Web.UI;
 using System.Security.Principal;
 using static Mession1.AccountToken;
+using NiteenNity_Case_SQL_API.Controller;
+using static Mession1.DataSet.DataSets;
+using NiteenNity_Case_SQL_API.Mode.DataSet.DataSet;
+
 namespace Mession1.Controllers
 {
     public class GameAPIController : ApiController
     {
+        [AcceptVerbs("Get")]
+        public static dynamic ss()
+        {
 
+            dynamic Result = new System.Dynamic.ExpandoObject();
+            Result.Status = 0;
+            Result.data = new { Token = "123", Url = "https://test" };
+            return Result;
+        }
 
         [AcceptVerbs("Get")]
-        public String ss()
+        public static String sss()
         {
+         
             return "123";
         }
+
+        [AcceptVerbs("Get")]
+        public static String test()
+        {
+
+            return "123";
+        }
+
         [AcceptVerbs("Get")]
         public String Register(String account, String userName, int accounted_return, int maxbalance)
         {
@@ -33,13 +54,19 @@ namespace Mession1.Controllers
 
         }
 
+        [AcceptVerbs("Get")]
         public String login(String account)
         {
-            String PostData = String.Format("會員帳號:{0}", account);
-            String LoData = SQLAPI.CallSQL(SQLAPI.SqlApi.LOGIN, PostData);
-            return null;
+            NiteenNityCaseController controller = NiteenNityCaseController.getIntance();
+            controller.SetConnectionStr("Data Source=localhost;Initial Catalog=tw_Casino1;UID=loveaoe33;PWD=love20720");
+            DataSet_PlayerLogin Login = new DataSet_PlayerLogin();
+            Login.Account = "e1559cc2fca34ea09b28668c30c60ae6";
+            Login.GameID = "1";
+            var result = controller.PlayerLogin(Login);
+            return result.FeedbackMsg;
         }
 
+        [AcceptVerbs("Get")]
         public Object checkPoint(String account)
         {
             String PostData = String.Format("會員帳號:{0}",account);
@@ -47,6 +74,7 @@ namespace Mession1.Controllers
             return null;
         }
 
+        [AcceptVerbs("Get")]
         public Object pointLogs(String account, int page,int limit)
         {
             String PostData = String.Format("會員帳號:{0}*幾頁:{1}*資料數:{2}", account, page, limit);
@@ -54,6 +82,7 @@ namespace Mession1.Controllers
             return null;
         }
 
+        [AcceptVerbs("Get")]
         public Object transferPoint(String account, int balance)
         {
             String PostData = String.Format("會員帳號:{0}*點數:{1}", account, balance);

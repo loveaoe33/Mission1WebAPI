@@ -266,3 +266,4 @@ C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\Newtonsoft.Json.Bson.dll
 C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\Newtonsoft.Json.Bson.pdb
 C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\Newtonsoft.Json.Bson.xml
 C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\MissonClass.cs
+C:\Users\loveaoe33\source\repos\Mession1\Mession1\bin\NiteenNity_Case_SQL_API.dll
