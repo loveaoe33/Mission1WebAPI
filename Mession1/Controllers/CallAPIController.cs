@@ -52,7 +52,7 @@ namespace Mession1.Controllers
             }
         }
         [AcceptVerbs("Get")]
-        public String login(String account,String GameID)
+        public String Login(String account,String GameID)
         {
             controller.initConn();
             controller.SetConnectionStr("Data Source=localhost;Initial Catalog=tw_Casino1;UID=loveaoe33;PWD=love20720");
@@ -73,13 +73,14 @@ namespace Mession1.Controllers
         }
 
         [AcceptVerbs("Get")]
-        public String checkPoint(string account)
+        public String CheckPoint(string account)
         {
             controller.initConn();
             controller.SetConnectionStr("Data Source=localhost;Initial Catalog=tw_Casino1;UID=loveaoe33;PWD=love20720");
             DataSet_CheckPoint CkPoint = new DataSet_CheckPoint();
             CkPoint.Account = account;
             NiteenNity_Case_SQL_API.Mode.DataSet.DAO.ExcuteResult result = controller.checkPoints(CkPoint);
+            
             if (result.isSucess)
             {
                 return result.ReturnData;
@@ -93,6 +94,32 @@ namespace Mession1.Controllers
            /* String PostData = String.Format("會員帳號:{0}", account);
             String ChData = SQLAPI.CallSQL(SQLAPI.SqlApi.CHECKPOINT, PostData);
             return null;*/
+        }
+        [AcceptVerbs("Get")]
+        public String TransPoint(string Account, string Reason, string Remark, string Balance, string Editor) {
+            controller.initConn();
+            controller.SetConnectionStr("Data Source=localhost;Initial Catalog=tw_Casino1;UID=loveaoe33;PWD=love20720");
+            NiteenNity_Case_SQL_API.Mode.DataSet.DataSet.DataSet_TransferPoint transData = new NiteenNity_Case_SQL_API.Mode.DataSet.DataSet.DataSet_TransferPoint();
+            /*下為必填參數*/
+            transData.Account = "";
+            transData.Balance = "";
+
+            /*下可為空直*/
+            transData.Editor = "";
+            transData.Remark = "";
+            transData.Reason = "";
+            NiteenNity_Case_SQL_API.Mode.DataSet.DAO.ExcuteResult result = controller.TransPoint(transData);
+            if (result.FeedbackMsg == "")
+            {
+                return result.FeedbackMsg;
+            }
+            else
+            {
+                return result.FeedbackMsg;
+
+            }
+
+
         }
 
 
